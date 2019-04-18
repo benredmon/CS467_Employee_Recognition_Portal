@@ -4,7 +4,10 @@ CS467 - Capstone Project: Employee Recognition Portal
 Project Team:
 - Ashley Fong (Log-in and Authentication)
 - Ming Lui (User Dashboard)
-- Ben Redmon (Admin Dashboard)
+- Ben Redmon (Admin Dashboard)  
+
+CS467: Capstone Project  
+March 18, 2019  
 
 Our team created a database backed website used to organize, create, and track employee recognition awards. Each of us had some experience from our previous coursework building a web application using Express and Node.js with a SQL database.  This project gave us the opportunity to get to more experience working with those backend technologies while also learning a new front-end framework, Angular.
 
