@@ -1,0 +1,136 @@
+3/12/2019
+- Prevented current logged in admin from deleting their own admin account
+- Disabled delete button of logged in admin and any master account = 1.
+
+3/11/2019
+- Fixed refresh bug with Monthly Award Chart filtering.
+- Added "Created" column with date for User Accounts in Admin Dashboard.
+- Changed Tab Title
+
+3/6/2019
+- Changed background of "Forgot Password" card to 'dimgrey'.
+- Monthly Awards Chart
+  - Made filterable by date range (start & end).
+  - Filter choosing one or both dates in the range.
+  - Filter can be cleared and reset.
+
+3/4/2019
+- Add signature pad to "Add User" form.
+- Style form to optimize signature entry.
+- Modify "List User" to properly display a stored image or a signature pad image.
+- Add signature pad to "Edit User" form.
+  - Populate stored signature.
+  - Allow stored signature to be changed.
+- Re-test with certificate generation.
+
+3/1/2019
+- Signature Pad (angular2-signaturepad)
+  - Initial testing
+  - Image storage
+  - Testing with certificate generation.
+
+2/27/2019
+- User Dashboard: Reformatting and styling of "Create Award" form.
+- Admin Dashboard: Styling of both sets of "add" and "edit" forms.
+- Changed /listawards/:id
+  - Was returning data by receiver ID.
+  - Changed to return data by giver ID.
+- Updated list.component to reflect changes to /listawards/:id
+  - Lists awards given by the logged in user.
+  - Displays the recipient of the awards given by the logged in user.
+- Admin Dashboard: Added Two ChartJS Charts
+  - Givers Chart
+  - Recipient Chart
+- Updated "Forgot Password" styling
+- Admin Dashboard: Added One ChartJS Charts
+  - Monthly Awards
+
+2/26/2019
+- User Dashboard: Added top-right navigation with "Welcome, <USER>!" and a drop down menu.
+  - Moved "Edit Profile" to the drop down menu.
+  - Moved "Log Out" to the drop down menu.
+- Format and styling for User Dashboard "Create Award".
+
+2/21/2019
+- Added app.js routes for employee-of-the-week and -month data.
+- Added lists of current employees-of-the-week and -month to the reporting component.
+
+2/20/2019
+- Added app.js routes for awards data:
+  - "/awardscount" for total count of all awards.
+  - "/awardgivers" for sorted list of award givers.
+  - "/awardreceivers" for sorted list of award recipients.
+- Added table of all awards to the reporting component.
+- Added cards containing total awards count, award givers, and award receivers to the reporting component.
+
+2/16/2019
+- Modified the CSS styling for the frontend.
+
+2/8/2019
+- Connected edit user to backend.
+- Connected delete user to backend.
+- Tested the list/add/edit/delete for admin and user accounts.
+
+2/7/2019
+- Refactored the add admin form to connect to the backend.
+- New admin accounts can be created using the add admin form.
+- Added in form validation to add admin.
+- Added in form validation to edit admin.
+- Connected list user to backend.
+- Connected add user to backend.
+
+2/6/2019
+- Fixed issues with listing admins (/admin/admins)
+  - Refactored the definition of dataSource for MatTableDataSource.
+  - Create the listAdmins() function to gathering initial table data and refreshing after deletion.
+  - Fixed refresh issue when deleting an admin from the table.
+- Populated the edit admin forms with user data
+
+1/31/2019
+- Finished updating admin routes in app.js
+- Added additional routes for adding, updating, and deleting users.
+- Updated team_kang.sql to automatically timestamp newly created users.
+- Added admin.service and admin.model to assist organizing and connecting front to back.
+- Refactoring code with addition of admin.service (on going).
+- Connected /admin/admins to backend to list database values in table.
+- Added in delete functionality to /admin/admins to delete entries from the table.
+
+1/30/2019
+- Added db.js for database connection credentials.
+  - NOTE: db_localhost.js is available for local development.
+- Update routes in app.js due to addition of db.js.
+- Added in functionality for CORS to allow communication between front and back.
+
+1/28/2019
+- Created team_kang.sql database definition with one test table, "admin_account".
+- Created backend directory.
+- Ran "npm init" to create package.json file.
+- Ran "npm --save mysql express" to include MySQL and Express dependencies.
+- Created app.js file.
+- Added some basic CRUD test routes to connect to local MySQL database.
+- All routes tested and working to list, add, update, and delete database.
+
+1/23/2019
+- Created admin list, add, and edit components.
+- Created reporting component.
+- Added tabs to admin dashboard to include admin accounts and reporting.
+- Fix button links in admin list component for add and edit.
+- Added forms to add and edit components for users and admins.
+
+1/22/2019
+- Created edit user component.
+- Created add user component.
+- Configured routing for both in app-routing.module.ts
+- Created layout for user list component:
+  - Modified an initial sketch of the table.
+  - Added buttons for edit and add user.
+  - Linked buttons to the correct routes.
+
+1/21/2019
+- Created admin dashboard component.
+- Created user list component.
+- Configured routing for both in app-routing.module.ts.
+- Created a layout for the admin dashboard:
+  - Angular Material tabs component.
+  - Created user accounts tab.
+  - Set up to add additional tabs for admin accounts and reporting.
