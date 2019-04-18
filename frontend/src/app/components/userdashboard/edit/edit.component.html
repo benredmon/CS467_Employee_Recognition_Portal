@@ -1,0 +1,60 @@
+<div>
+    <flash-messages></flash-messages>
+<div>
+
+<div id="table">
+  <div class="dashRow">
+    <button mat-button routerLink="/userdashboard" id="back-button">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+  </div>
+  <br>
+  <div class="dashRow">
+    <mat-card class="halves">
+      <mat-card-title style="text-align: center">Edit Profile</mat-card-title>
+      <form [formGroup]="editForm">
+        <mat-card-content>
+           <mat-form-field appearance="standard">
+             <mat-label>First Name</mat-label>
+             <input matInput [placeholder]=user.fname [value]=user.fname formControlName="fname" #fname>
+           </mat-form-field>
+           <br>
+           <mat-form-field appearance="standard">
+             <mat-label>Last Name</mat-label>
+             <input matInput [placeholder]=user.lname [value]=user.lname formControlName="lname" #lname>
+           </mat-form-field>
+           <br>
+        </mat-card-content>
+        <mat-card-actions>
+           <button type="submit" (click)="updateProfile(fname.value, lname.value)" mat-button class="save-button">
+             <mat-icon>save_alt</mat-icon>
+           </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+
+    <mat-card class="halves">
+      <mat-card-title style="text-align: center">Change Password</mat-card-title>
+      <form [formGroup]="passwordForm">
+        <mat-card-content>
+           <mat-form-field appearance="standard">
+             <mat-label>New Password</mat-label>
+             <input matInput type="password" formControlName="pword" #pword>
+           </mat-form-field>
+           <br>
+           <mat-form-field appearance="standard">
+             <mat-label>Confirm Password</mat-label>
+             <input matInput type="password" formControlName="cpword" #cpword>
+           </mat-form-field>
+           <br>
+        </mat-card-content>
+        <mat-card-actions>
+           <button type="submit" (click)="updatePword(pword.value, cpword.value)" [disabled]="passwordForm.pristine || passwordForm.invalid" mat-button class="save-button">
+             <mat-icon>save_alt</mat-icon>
+           </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+
+  </div>
+</div>

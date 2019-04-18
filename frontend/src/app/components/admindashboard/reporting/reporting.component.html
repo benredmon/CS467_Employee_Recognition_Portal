@@ -1,0 +1,125 @@
+<div id="table">
+  <div class="dashRow">
+    <mat-card class="thirds">
+      <mat-card-title>Total Awards</mat-card-title>
+      <mat-card-content id="totalCount"></mat-card-content>
+    </mat-card>
+    <mat-card class="thirds">
+      <mat-card-title>Employee of the Week</mat-card-title>
+      <mat-card-content id="eotw"></mat-card-content>
+    </mat-card>
+    <mat-card class="thirds">
+      <mat-card-title>Employee of the Month</mat-card-title>
+      <mat-card-content id="eotm"></mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="height: 25px;"></div>
+
+  <div class="dashRow">
+    <mat-card class="halfOne">
+      <mat-card-title>Top Givers</mat-card-title>
+      <mat-card-content id="listG"></mat-card-content>
+    </mat-card>
+    <mat-card class="halfTwo">
+      <mat-card-title>Award Givers</mat-card-title>
+      <mat-card-content>
+        <div *ngIf="chartG">
+          <canvas id="giverChart">{{ chart }}</canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="height: 25px;"></div>
+
+  <div class="dashRow">
+    <mat-card class="halfOne">
+      <mat-card-title>Top Recipients</mat-card-title>
+      <mat-card-content id="listR"></mat-card-content>
+    </mat-card>
+    <mat-card class="halfTwo">
+      <mat-card-title>Award Recipients</mat-card-title>
+      <mat-card-content>
+        <div *ngIf="chartR">
+          <canvas id="receiverChart">{{ chart }}</canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="height: 25px;"></div>
+
+  <div class="dashRow">
+    <mat-card class="wholes">
+      <mat-card-title style="text-align: center">Monthly Awards</mat-card-title>
+      <mat-card-content>
+        <div *ngIf="chartA" id="chartMonth">
+          <canvas id="monthlyChart"></canvas>
+        </div>
+        <br>
+        <div id="rangeForm">
+          <form #f="ngForm" (ngSubmit)="dateRange(f)" id="graphForm">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Starting Date" id="start" name="start" ngModel>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" placeholder="Ending Date" id="end" name="end" ngModel>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <input type="submit" value="Submit" class="range-button">
+            <input type="reset" value="Reset" (click)="resetGraph()" class="range-button">
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="height: 25px;"></div>
+
+  <div class="dashRow">
+    <mat-card class="wholes">
+      <mat-card-title style="text-align: center">Awards Data</mat-card-title>
+      <mat-card-content>
+        <mat-form-field id="filter">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" id="filter">
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="desc" class="mat-elevation-z8">
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+          <!-- Given By -->
+          <ng-container matColumnDef="grantedBy">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Given By </th>
+            <td mat-cell *matCellDef="let element"> {{element.grantedBy}} </td>
+          </ng-container>
+          <!-- Received By -->
+          <ng-container matColumnDef="recipient">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Received By </th>
+            <td mat-cell *matCellDef="let element"> {{element.recipient}} </td>
+          </ng-container>
+          <!-- Award Type -->
+          <ng-container matColumnDef="awardType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Award Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.awardType}} </td>
+          </ng-container>
+          <!-- Date -->
+          <ng-container matColumnDef="dateGiven">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Given </th>
+            <td mat-cell *matCellDef="let element"> {{element.dateGiven}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="height: 25px;"></div>
+
+</div>

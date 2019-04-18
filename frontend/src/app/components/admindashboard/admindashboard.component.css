@@ -1,0 +1,21 @@
+#tabs {
+  display: table;
+  margin: 0 auto;
+  width: 775px;
+}
+
+a.mat-tab-link {
+  color: azure;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  color: azure;
+}
+
+mat-menu {
+    background-color: grey;
+}

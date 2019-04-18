@@ -1,0 +1,59 @@
+<br>
+<br>
+<mat-card id="userCard">
+  <mat-card-title>Edit User Account</mat-card-title>
+  <form [formGroup]="userForm" novalidate (ngSubmit)="updateUser()">
+    <mat-card-content>
+      <!-- First Name Field -- SOURCE: https://code-maze.com/angular-material-form-validation/ -->
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="fname" #fname>
+        <mat-error *ngIf="hasError('fname', 'required')">First name is required</mat-error>
+        <mat-error *ngIf="hasError('fname', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Last Name Field -->
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lname" #lname>
+        <mat-error *ngIf="hasError('lname', 'required')">Last name is required</mat-error>
+        <mat-error *ngIf="hasError('lname', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Email Field -- SOURCE: https://material.angular.io/components/input/examples -->
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" #email>
+        <mat-error *ngIf="hasError('email', 'email') && !hasError('email', 'required')">Please enter a valid email address</mat-error>
+        <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Signature Field -->
+      <!--mat-form-field>
+        <input matInput placeholder="Signature" formControlName="signature" #lname>
+        <mat-error *ngIf="hasError('signature', 'required')">Signature is required</mat-error>
+        <mat-error *ngIf="hasError('signature', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field-->
+
+      <!-- SIGNATURE PAD -->
+      <div id="signature">
+        <span>Signature</span>
+        <div id="pad">
+          <signature-pad [options]="signaturePadOptions"></signature-pad>
+          <button id="clear" (click)="drawClear()">
+            Clear
+          </button>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- Buttons -->
+      <button mat-button color="primary" [disabled]="!userForm.valid" type="submit" id="submit-button">
+        <mat-icon>save_alt</mat-icon>
+      </button>
+      <a mat-button color="primary" routerLink="../../users" id="cancel-button">
+        <mat-icon>clear</mat-icon>
+      </a>
+      <div style="clear:both"></div>
+    </mat-card-actions>
+  </form>
+</mat-card>

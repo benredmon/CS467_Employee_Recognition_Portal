@@ -1,0 +1,55 @@
+<br>
+<br>
+  <mat-card id="createCard">
+    <mat-card-title>Create A New Award</mat-card-title>
+    <p>A certificate will be emailed to the recipient after the form is submitted.</p>
+    <form [formGroup]="createForm" class="create-form">
+      <mat-card-content>
+        <mat-form-field>
+          <mat-select placeholder="Award Type" formControlName="aid" #aid>
+           <mat-option value="1">Employee of the Month</mat-option>
+           <mat-option value="2">Employee of the Week</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-select placeholder="Award Given To" formControlName="rid" #rid>
+            <mat-option *ngFor="let user of users" [value]=user.id>{{user.fname}} {{user.lname}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Recipient Email</mat-label>
+          <input matInput [placeholder]=selectedUser?.email [value]=selectedUser?.email disabled>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Award Given By</mat-label>
+          <input matInput [placeholder]=logInUser.fname [value]="logInUser.fname + ' ' + logInUser.lname" disabled>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Date Granted</mat-label>
+          <input matInput [matDatepicker]="dp" matInput formControlName="date" #date>
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Time Granted</mat-label>
+          <input type="time" matInput formControlName="time" #time>
+        </mat-form-field>
+        <br>
+      </mat-card-content>
+    <flash-messages></flash-messages>
+    <mat-card-actions>
+      <button type="submit" (click)="addAward(rid.value, aid.value, date.value, time.value)" [disabled]="createForm.pristine || createForm.invalid || createForm.submitted" mat-button id="submit-button">
+        <mat-icon>save_alt</mat-icon>
+      </button>
+      <button mat-button routerLink="/userdashboard" id="cancel-button">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <br>
+    </mat-card-actions>
+    </form>
+  </mat-card>

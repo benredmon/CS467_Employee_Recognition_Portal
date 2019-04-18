@@ -1,0 +1,41 @@
+#table {
+  padding-top: 20px;
+}
+
+.dashRow {
+  width: 775px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.halves {
+  width: 350px;
+  background: dimgrey;
+  color: aquamarine;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+input {
+  background: transparent;
+  color: aquamarine;
+}
+
+input:focus {
+  background: transparent;
+  color: aquamarine;
+}
+
+button {
+  background: aquamarine;
+  color: black;
+}
+
+.save-button {
+  width: 100%;
+}

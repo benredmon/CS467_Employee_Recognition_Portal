@@ -1,0 +1,106 @@
+#table {
+  padding-top: 20px;
+}
+
+#filter {
+  max-width: 300px;
+  width: 100%;
+  font-size: 10pt;
+}
+
+table.mat-table {
+  width: 100%;
+  background: transparent;
+}
+
+th.mat-sort-header-sorted {
+  color: aquamarine;
+}
+
+th.mat-header-cell {
+  font-size: 10pt;
+  color: azure;
+  text-decoration: underline aquamarine;
+}
+
+td.mat-cell {
+  color: azure;
+}
+
+.dashRow {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wholes {
+  width: 100%;
+  background: dimgrey;
+  color: aquamarine;
+}
+
+.halves {
+  width: 48.25%;
+  background: dimgrey;
+  color: aquamarine;
+  text-align: center;
+}
+
+.halfOne {
+  width: 31%;
+  background: dimgrey;
+  color: azure;
+  text-align: center;
+}
+
+.halfTwo {
+  width: 65.5%;
+  background: dimgrey;
+  color: azure;
+  text-align: center;
+}
+
+.thirds {
+  width: 31%;
+  background: dimgrey;
+  color: azure;
+  text-align: center;
+}
+
+mat-card-title {
+  color: aquamarine;
+  font-size: 1.2em;
+}
+
+canvas {
+  color: azure;
+}
+
+#rangeForm {
+  width: 575px;
+  margin: 0 auto;
+}
+
+#graphForm {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+input.range-button {
+  height: 35px;
+  width: 60px;
+  background: rgba(127, 255, 212, 0.7);
+  color: black;
+  border: none;
+}
+
+input.range-button:active {
+  height: 35px;
+  width: 60px;
+  background: rgba(127, 255, 212, 1.0);
+  color: black;
+  border: none;
+}

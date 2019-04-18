@@ -1,0 +1,38 @@
+#table {
+  padding-top: 20px;
+}
+
+#filter {
+  max-width: 300px;
+  width: 100%;
+  font-size: 10pt;
+}
+
+input {
+  color: azure;
+}
+
+table.mat-table {
+  width: 100%;
+  background: transparent;
+}
+
+th.mat-sort-header-sorted {
+  color: aquamarine;
+}
+
+th.mat-header-cell {
+  font-size: 10pt;
+  color: azure;
+  text-decoration: underline aquamarine;
+}
+
+td.mat-cell {
+  color: azure;
+}
+
+.wholes {
+  width: 100%;
+  background: dimgrey;
+  color: aquamarine;
+}

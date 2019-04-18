@@ -1,0 +1,57 @@
+#alert-danger
+{
+  background-color: red;
+}
+
+#createCard {
+  width: 350px;
+  margin: 0 auto;
+  background: dimgrey;
+}
+
+p {
+  text-align: center;
+  color: white;
+}
+
+mat-card-title {
+  text-align: center;
+  color: aquamarine;
+}
+
+::ng-deep .mat-select-value-text {
+  color: aquamarine;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+input {
+  background: transparent;
+  color: aquamarine;
+}
+
+input:focus {
+  background: transparent;
+  color: aquamarine;
+}
+
+input:disabled {
+  background: transparent;
+  color: aquamarine;
+}
+
+#submit-button {
+  float: left;
+  width: 75%;
+  background: aquamarine;
+  color: black;
+}
+
+#cancel-button {
+  float: right;
+  width: 20%;
+  background: aquamarine;
+  color: black;
+}

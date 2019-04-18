@@ -1,0 +1,53 @@
+<br>
+<br>
+<mat-card id="adminCard">
+  <mat-card-title>Add New Admin</mat-card-title>
+  <form [formGroup]="adminForm" novalidate (ngSubmit)="addAdmin()">
+    <mat-card-content>
+      <!-- First Name Field -- SOURCE: https://code-maze.com/angular-material-form-validation/ -->
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="first_name" #first_name>
+        <mat-error *ngIf="hasError('first_name', 'required')">First name is required</mat-error>
+        <mat-error *ngIf="hasError('first_name', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Last Name Field -->
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="last_name" #last_name>
+        <mat-error *ngIf="hasError('last_name', 'required')">Last name is required</mat-error>
+        <mat-error *ngIf="hasError('last_name', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Email Field -- SOURCE: https://material.angular.io/components/input/examples -->
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" #email>
+        <mat-error *ngIf="hasError('email', 'email') && !hasError('email', 'required')">Please enter a valid email address</mat-error>
+        <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Password Field -->
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" formControlName="pword" #pword>
+        <mat-error *ngIf="hasError('pword', 'required')">A password is required.</mat-error>
+        <mat-error *ngIf="hasError('pword', 'maxlength')">You have more than 255 characters</mat-error>
+      </mat-form-field>
+      <br>
+      <!-- Master Field -->
+      <mat-form-field>
+        <input type="number" min="0" max="1" matInput placeholder="Master" formControlName="master" #master>
+        <mat-error *ngIf="hasError('master', 'required')">Master choice required.</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- Buttons -->
+      <button mat-button color="primary" [disabled]="!adminForm.valid" type="submit" id="submit-button">
+        <mat-icon>save_alt</mat-icon>
+      </button>
+      <a mat-button color="primary" routerLink="../admins" id="cancel-button">
+        <mat-icon>clear</mat-icon>
+      </a>
+      <div style="clear:both"></div>
+    </mat-card-actions>
+  </form>
+</mat-card>

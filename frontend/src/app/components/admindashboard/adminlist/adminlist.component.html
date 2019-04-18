@@ -1,0 +1,56 @@
+<div id="table">
+  <mat-card class="wholes">
+    <mat-card-title style="text-align: center">Admin Accounts</mat-card-title>
+    <mat-card-content>
+      <mat-form-field id="filter">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" id="filter">
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <!-- First Name Column -->
+        <ng-container matColumnDef="first_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+        </ng-container>
+        <!-- Last Name Column -->
+        <ng-container matColumnDef="last_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+        </ng-container>
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <!-- Master Column -->
+        <ng-container matColumnDef="master">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Master </th>
+          <td mat-cell *matCellDef="let element"> {{element.master}} </td>
+        </ng-container>
+        <!-- Edit & Delete Column -->
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef>
+            <button mat-button  (click)="addAdmin()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button (click)="editAdmin(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-button (click)="deleteAdmin(element)" [disabled]="(currentUser == element.id) || (element.master == 'Yes')">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  <br>
+</div>

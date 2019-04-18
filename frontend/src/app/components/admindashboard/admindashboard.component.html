@@ -1,0 +1,27 @@
+<div id="menu">
+  <span>Welcome, {{logInUser}}!</span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="adminlogout()">
+      <mat-icon>clear</mat-icon>
+      <span>Sign Out</span>
+    </button>
+  </mat-menu>
+</div>
+<br>
+
+<div id="tabs">
+<nav mat-tab-nav-bar>
+  <a mat-tab-link style="color: accent"
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
+<router-outlet></router-outlet>
+</div>

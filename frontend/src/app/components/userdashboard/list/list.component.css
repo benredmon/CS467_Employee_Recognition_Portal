@@ -1,0 +1,30 @@
+#table {
+  width: 775px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+table.mat-table {
+  width: 100%;
+  background: transparent;
+}
+
+th.mat-sort-header-sorted {
+  color: aquamarine;
+}
+
+th.mat-header-cell {
+  font-size: 10pt;
+  color: azure;
+  text-decoration: underline aquamarine;
+}
+
+td.mat-cell {
+  color: azure;
+}
+
+.wholes {
+  width: 100%;
+  background: dimgrey;
+  color: aquamarine;
+}

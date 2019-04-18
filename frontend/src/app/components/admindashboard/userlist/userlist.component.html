@@ -1,0 +1,61 @@
+<div id="table">
+  <mat-card class="wholes">
+    <mat-card-title style="text-align: center">User Accounts</mat-card-title>
+    <mat-card-content>
+      <mat-form-field id="filter">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <!-- First Name Column -->
+        <ng-container matColumnDef="fname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+        </ng-container>
+        <!-- Last Name Column -->
+        <ng-container matColumnDef="lname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lname}} </td>
+        </ng-container>
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <!-- Signature Column -->
+        <ng-container matColumnDef="signature">
+          <th mat-header-cell *matHeaderCellDef>Signature</th>
+          <td mat-cell *matCellDef="let element" id="{{element.email}}">{{getSignature(element)}}</td>
+        </ng-container>
+        <!-- Created Column -->
+        <ng-container matColumnDef="timestamp">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Created </th>
+          <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
+        </ng-container>
+        <!-- Edit & Delete Column -->
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef>
+            <button mat-button (click)="addUser()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button (click)="editUser(element)" class="iconButton">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteUser(element)" class="iconButton">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  <br>
+</div>

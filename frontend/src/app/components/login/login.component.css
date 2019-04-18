@@ -1,0 +1,43 @@
+#title {
+  text-align: center;
+}
+
+#loginCard{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 405px;
+  height: 325px;
+  color: azure;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+input {
+  background: transparent;
+  padding: 10px;
+  color: aquamarine;
+  border: 2px solid azure;
+}
+
+input:focus {
+  background: transparent;
+  padding: 10px;
+  color: aquamarine;
+  border: 2px solid azure;
+}
+
+#forgot {
+  float: right;
+  font-size: 0.75em;
+  color: aquamarine;
+}
+
+.btn-dark {
+  background: aquamarine;
+  color: #353231;
+  width: 100%;
+}

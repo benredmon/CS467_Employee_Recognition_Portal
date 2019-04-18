@@ -1,0 +1,63 @@
+#userCard {
+  width: 350px;
+  margin: 0 auto;
+  background: dimgrey;
+}
+
+mat-card-title {
+  text-align: center;
+  color: aquamarine;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+input {
+  background: transparent;
+  color: aquamarine;
+}
+
+input:focus {
+  background: transparent;
+  color: aquamarine;
+}
+
+#submit-button {
+  float: left;
+  width: 75%;
+  background: aquamarine;
+  color: black;
+}
+
+#cancel-button {
+  float: right;
+  width: 20%;
+  background: aquamarine;
+  color: black;
+}
+
+#signature {
+  margin: 0 auto;
+  color: azure;
+}
+
+#pad {
+  width: 100%;
+  background: white;
+  border: solid 2px black;
+  position: relative;
+}
+
+#clear {
+  width: 50px;
+  border: none;
+  border-top: solid 1px black;
+  border-left: solid 1px black;
+  background: grey;
+  color: azure;
+  font-size: 0.75em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,20 @@
+<div id="menu">
+  <span>Welcome, {{logInUser}}!</span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/userdashboard/edit">
+      <mat-icon>person</mat-icon>
+      <span>Edit Profile</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>clear</mat-icon>
+      <span>Sign Out</span>
+    </button>
+  </mat-menu>
+</div>
+<br>
+<router-outlet></router-outlet>
+<! -- User Router Views Go Here -->

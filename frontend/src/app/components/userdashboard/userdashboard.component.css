@@ -1,0 +1,11 @@
+#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  color: azure;
+}
+
+mat-menu {
+    background-color: grey;
+}
